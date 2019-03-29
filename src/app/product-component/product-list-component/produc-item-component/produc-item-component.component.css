@@ -1,0 +1,11 @@
+img {
+    max-width: 200px;
+}
+
+.product-description {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}

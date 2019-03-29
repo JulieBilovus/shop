@@ -1,0 +1,11 @@
+<div>
+  <p *ngIf="cartProducts.length; else noProducts">
+    There are {{cartProducts.length}} products
+  </p>
+  <ng-template #noProducts>
+    There are no products added
+  </ng-template>
+  <button
+      [disabled]="!cartProducts.length"
+      (click)="removeAllProducts()">Clear</button>
+</div>

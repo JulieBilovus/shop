@@ -1,0 +1,19 @@
+<div class="product-item">
+  <h2>{{currentProduct.name}}</h2>
+  <div class="product-description">
+    <div>
+      <img [src]="currentProduct.photoUrl">
+    </div>
+    <div>
+      <ul>
+        <li><strong>Description:</strong> <br>{{currentProduct.description}}</li>
+        <li><strong>Category:</strong> <br>{{currentProduct.category}}</li>
+        <li><strong>Is available:</strong> <br>{{currentProduct.isAvailable}}</li>
+        <li><strong>Price:</strong> <br>{{currentProduct.price | currency}}</li>
+        <li>
+          <button (click)="onBuy(currentProduct)">Buy</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
