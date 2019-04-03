@@ -7,4 +7,5 @@ export interface IProduct {
   category: ProductCategoriesEnum;
   isAvailable: boolean;
   photoUrl?: string;
+  count?: number;
 }
