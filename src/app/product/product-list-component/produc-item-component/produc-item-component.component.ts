@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../../cart/services/cart.service';
 
@@ -16,7 +16,7 @@ export class ProducItemComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  onBuy(product: IProduct) {
-    this.cartService.addProductToTheCart(product);
+  onBuy() {
+    this.cartService.addProductToTheCart(this.currentProduct);
   }
 }

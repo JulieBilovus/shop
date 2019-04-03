@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from '../../product-component/models/iproduct';
+import { IProduct } from '../../product/models/iproduct';
 import { Subject } from 'rxjs';
 
 @Injectable({
