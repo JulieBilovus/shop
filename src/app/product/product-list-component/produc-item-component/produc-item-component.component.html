@@ -11,7 +11,9 @@
         <li><strong>Is available:</strong> <br>{{currentProduct.isAvailable}}</li>
         <li><strong>Price:</strong> <br>{{currentProduct.price | currency}}</li>
         <li>
-          <button (click)="onBuy()">Buy</button>
+          <button
+            (click)="onBuy()"
+            [disabled]="!currentProduct.isAvailable">Buy</button>
         </li>
       </ul>
     </div>

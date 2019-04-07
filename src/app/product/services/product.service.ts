@@ -9,6 +9,7 @@ import { ProductCategoriesEnum } from '../models/product-categories-enum.enum';
 export class ProductService {
   private products: Array<IProduct> = [
     new ProductItem(
+      1,
       'some phone',
       'It is awesome phone',
       1200,
@@ -17,14 +18,15 @@ export class ProductService {
       'https://www.euronics.ee/UserFiles/Products/Images/166514-nokia-3310-blue-1.png'
     ),
     new ProductItem(
+      2,
       'some phone',
       'It is awesome phone',
       1200,
       ProductCategoriesEnum.SMARTPHONES,
-      true,
-      'https://www.euronics.ee/UserFiles/Products/Images/166514-nokia-3310-blue-1.png'
+      false
     ),
     new ProductItem(
+      3,
       'some phone',
       'It is awesome phone',
       1200,

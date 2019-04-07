@@ -6,22 +6,30 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  public productsInCart: Array<IProduct> = [];
-  public productInCartChanged = new Subject<Array<IProduct>>();
+  public productsInCart = {};
+  public productInCartChanged = new Subject<any>();
 
   constructor() { }
 
-  public getProductsInCart(): Array<IProduct> {
-    return this.productsInCart.slice();
+  public getProductsInCart() {
+    return this.productsInCart;
   }
 
   public addProductToTheCart(product: IProduct) {
-    this.productsInCart.push(product);
-    this.productInCartChanged.next(this.productsInCart.slice());
+    if (this.productsInCart[product.id]) {
+      this.productsInCart[product.id].count++;
+    } else {
+      this.productsInCart[product.id] = {
+        ...product,
+        count: 1
+      };
+    }
+
+    this.productInCartChanged.next(this.productsInCart);
   }
 
   public removeAllProducts() {
-    this.productsInCart = [];
-    this.productInCartChanged.next(this.productsInCart.slice());
+    this.productsInCart = {};
+    this.productInCartChanged.next(this.productsInCart);
   }
 }

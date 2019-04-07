@@ -1,6 +1,7 @@
 import { ProductCategoriesEnum } from './product-categories-enum.enum';
 
 export interface IProduct {
+  id: number,
   name: string;
   description: string;
   price: number;
